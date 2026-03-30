@@ -242,7 +242,9 @@ export default function App() {
         </div>
       </header>
 
-      <main className="mx-auto grid max-w-6xl gap-6 px-4 py-6 lg:grid-cols-[1fr_380px]">
+      <main
+        className={`mx-auto grid max-w-6xl gap-6 px-4 py-6 ${chaosOpen ? "lg:grid-cols-[1fr_380px]" : "lg:grid-cols-1"}`}
+      >
         <div className="space-y-6">
           <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <Kpi
@@ -534,7 +536,7 @@ export default function App() {
 
         <aside
           className={`fixed inset-y-0 right-0 z-40 w-full max-w-md transform border-l border-surface-border bg-surface-raised shadow-2xl transition-transform duration-200 lg:relative lg:z-0 lg:max-w-none lg:border lg:rounded-xl lg:shadow-none ${
-            chaosOpen ? "translate-x-0" : "translate-x-full lg:translate-x-0"
+            chaosOpen ? "translate-x-0" : "translate-x-full lg:hidden"
           }`}
         >
           <div className="flex h-full flex-col gap-4 overflow-y-auto p-4 lg:h-auto lg:max-h-[calc(100vh-5rem)]">
